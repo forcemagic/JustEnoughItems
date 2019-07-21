@@ -122,7 +122,7 @@ public class BrewingRecipeMaker {
 				BrewingRecipe brewingRecipe = (BrewingRecipe) iBrewingRecipe;
 				ItemStack[] stacks = brewingRecipe.getIngredient().getMatchingStacks();
 				if (stacks.length > 0) {
-					ItemStack input = brewingRecipe.getInput();
+					ItemStack input = brewingRecipe.getInput().getMatchingStacks()[0];
 					// AbstractBrewingRecipe.isInput treats any uncraftable potion here as a water bottle in the brewing stand
 					if (ItemStack.areItemStacksEqual(input, BrewingRecipeUtil.POTION)) {
 						input = BrewingRecipeUtil.WATER_BOTTLE;
